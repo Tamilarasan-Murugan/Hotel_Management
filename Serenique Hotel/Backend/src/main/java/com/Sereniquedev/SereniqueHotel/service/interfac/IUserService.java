@@ -6,7 +6,7 @@ import com.Sereniquedev.SereniqueHotel.entity.User;
 
 public interface IUserService {
 
-    Response register(User loginRequest);
+    Response register(User user);
 
     Response login(LoginRequest loginRequest);
 
@@ -18,5 +18,5 @@ public interface IUserService {
 
     Response getUserById(String userId);
 
-    Response getMyInfo(String userId);
+    Response getMyInfo(String email);
 }
