@@ -167,7 +167,7 @@ public class UserService implements IUserService {
     public Response getMyInfo(String email) {
         Response response=new Response();
         try{
-            User user=userRepository.findById(Long.valueOf(email)).orElseThrow(()->new OurException("User Not Found"));
+            User user=userRepository.findByEmail(email).orElseThrow(()->new OurException("User Not Found"));
             UserDTO userDTO=Utils.mapUserEntityToUserDTO(user);
             response.setStatusCode(200);
             response.setMessage("successful");
